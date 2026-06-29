@@ -105,7 +105,7 @@ st.markdown("""
 
 # ─── Header ────────────────────────────────
 st.markdown("<h1>📚 Exam Score Predictor</h1>", unsafe_allow_html=True)
-st.markdown("<p>Predict student exam score based on study hours using AI</p>",
+st.markdown("<p>Predict student exam score based on study hours </p>",
             unsafe_allow_html=True)
 st.divider()
 
