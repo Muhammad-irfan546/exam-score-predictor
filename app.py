@@ -10,26 +10,47 @@ st.title("📚 Exam Score Predictor")
 st.markdown("Predict a student exam score based on study hours.")
 st.divider()
 
-# Fixed - max 10 hours only
+# ✅ Green button CSS
+st.markdown("""
+    <style>
+    div.stButton > button {
+        background-color: #28a745;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 10px 30px;
+        border: none;
+        width: 100%;
+    }
+    div.stButton > button:hover {
+        background-color: #218838;
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Slider - step 0.1 allows all values
 study_hours = st.slider(
     "How many hours did the student study?",
     min_value=0.0,
     max_value=10.0,
     value=5.0,
-    step=0.5
+    step=0.1
 )
 
 st.write(f"Selected Study Hours: **{study_hours}**")
 
-if st.button("Predict Exam Score"):
+# ✅ Green Predict Button
+if st.button("🎯 Predict Exam Score"):
     input_data = np.array([[study_hours]])
     raw_prediction = model.predict(input_data)[0]
 
-    # Fixed - cap between 0 and 100
+    # Cap between 0 and 100
     prediction = float(np.clip(raw_prediction, 0, 100))
 
     st.divider()
-    st.success(f"Predicted Exam Score: **{prediction:.1f} / 100**")
+    st.success(f"📊 Predicted Exam Score: **{prediction:.1f} / 100**")
     st.progress(int(prediction))
 
     if prediction >= 80:
