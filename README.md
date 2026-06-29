@@ -5,7 +5,7 @@ A Machine Learning web app that predicts student exam scores
 based on study hours using Linear Regression.
 
 ## 🌐 Live Demo
-👉 https://github.com/Muhammad-irfan546/exam-score-predictor
+👉 https://exam-score-predictor-efj6whkd2myit7usmojied.streamlit.app/
 
 ## 📊 Project Overview
 - **Problem:** Predict how much a student will score based on study hours
